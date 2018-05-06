@@ -5,6 +5,7 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 
+import com.techm.ms.resource.UserResourceImpl;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,8 +56,7 @@ public class JerseyConfiguration extends ResourceConfig {
      */
 	@Autowired
     public JerseyConfiguration() {
-		register(AccountResourceImpl.class);	
-		
+		registerClasses(AccountResourceImpl.class, UserResourceImpl.class);
     }
 	
 		@PostConstruct

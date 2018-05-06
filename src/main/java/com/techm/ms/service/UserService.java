@@ -17,4 +17,6 @@ public interface UserService {
 	List<User> findAllUsers();
 	
 	boolean isUserExist(User account);
+
+	void addUser(String naem, int age);
 }
